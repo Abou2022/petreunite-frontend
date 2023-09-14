@@ -1,7 +1,6 @@
 import "../home/HomePage.css";
-
 import React from "react";
-import { Link } from "react-router-dom"; // Import the Link component if you're using React Router
+import { Link } from "react-router-dom";
 
 const HomePage = () => {
   return (
@@ -12,34 +11,33 @@ const HomePage = () => {
       </header>
 
       <main>
-        <section className="hero">
-          <h2>Find Lost Pets</h2>
+        <section className="signup-section">
+          <h2>Sign Up</h2>
           <p>
-            Help lost pets find their way back home by browsing listings or
-            reporting a found pet.
+            Join our community and help reunite lost pets with their owners.
           </p>
-          <Link to="/lost-pets" className="btn-primary">
-            Browse Lost Pets
+          <Link to="/signup" className="btn-primary">
+            Sign Up
           </Link>
         </section>
 
-        <section className="hero">
-          <h2>Reunite Families</h2>
+        <section className="login-section">
+          <h2>Login</h2>
           <p>
-            Help pet owners find their missing companions. Report found pets and
-            make a difference.
+            Already a member? Log in to report lost or found pets and make a
+            difference.
           </p>
-          <Link to="/found-pets" className="btn-primary">
-            Report a Found Pet
+          <Link to="/login" className="btn-secondary">
+            Log In
           </Link>
         </section>
       </main>
 
-      <footer>
+      {/* <footer>
         <p>
           &copy; {new Date().getFullYear()} PetReunite. All rights reserved.
         </p>
-      </footer>
+      </footer> */}
     </div>
   );
 };
