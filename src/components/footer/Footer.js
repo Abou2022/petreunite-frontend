@@ -1,13 +1,7 @@
 import "../footer/Footer.css";
 
 import React from "react";
-import {
-  FaGithub,
-  FaHome,
-  FaLinkedin,
-  FaMailBulk,
-  FaPhone,
-} from "react-icons/fa";
+import { FaGithub, FaHome, FaLinkedin, FaMailBulk } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -21,15 +15,7 @@ const Footer = () => {
               <p>United States</p>
             </div>
           </div>
-          <div className="phone">
-            <h4>
-              <FaPhone
-                size={20}
-                style={{ color: "#fff", marginRight: "2rem" }}
-              />
-              +1 (253) 263 - 9001
-            </h4>
-          </div>
+
           <div className="email">
             <h4>
               <FaMailBulk
@@ -41,16 +27,6 @@ const Footer = () => {
               </a>
             </h4>
           </div>
-        </div>
-
-        <div className="right">
-          <h4>About Pet Reunite</h4>
-          <p>
-            Passionate animal lover and tech enthusiast dedicated to creating a
-            user-friendly platform for reuniting lost pets with their owners,
-            leveraging my skills in web development and a deep empathy for the
-            bond between humans and their furry companions.
-          </p>
           <div className="social">
             <a href="https://github.com/Abou2022" target="_blanc">
               {" "}
@@ -67,6 +43,16 @@ const Footer = () => {
               />
             </a>
           </div>
+        </div>
+
+        <div className="right">
+          <h4>About Pet Reunite</h4>
+          <p>
+            Passionate animal lover and tech enthusiast dedicated to creating a
+            user-friendly platform for reuniting lost pets with their owners,
+            leveraging my skills in web development and a deep empathy for the
+            bond between humans and their furry companions.
+          </p>
         </div>
       </div>
     </div>
