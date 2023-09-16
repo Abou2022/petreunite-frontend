@@ -1,54 +1,70 @@
 import "../footer/Footer.css";
+
 import React from "react";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import {
+  FaGithub,
+  FaHome,
+  FaLinkedin,
+  FaMailBulk,
+  FaPhone,
+} from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="footer">
-      <div className="footer-content">
-        <div className="footer-left">
-          <p>
-            &copy; {new Date().getFullYear()} PetReunite. All rights reserved.
-          </p>
+    <div className="footer">
+      <div className="footer-container">
+        <div className="left">
+          <div className="location">
+            <FaHome size={20} style={{ color: "#fff", marginRight: "2rem" }} />
+            <div>
+              <p>Kent, Washington</p>
+              <p>United States</p>
+            </div>
+          </div>
+          <div className="phone">
+            <h4>
+              <FaPhone
+                size={20}
+                style={{ color: "#fff", marginRight: "2rem" }}
+              />
+              +1 (253) 263 - 9001
+            </h4>
+          </div>
+          <div className="email">
+            <h4>
+              <FaMailBulk
+                size={20}
+                style={{ color: "#fff", marginRight: "2rem" }}
+              />
+              <a href="mailto:syllabakary2002@gmail.com">
+                syllabakary2002@gmail.com
+              </a>
+            </h4>
+          </div>
         </div>
-        <div className="footer-right">
-          <ul className="social-links">
-            <li>
-              <a
-                href="mailto:contact@petreunite.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i className="fas fa-envelope"></i>
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.facebook.com/petreunite"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i className="fab fa-facebook"></i>
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://github.com/petreunite"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i className="fab fa-github"></i>
-              </a>
-            </li>
-            <li>
-              <a href="tel:+1234567890">
-                <i className="fas fa-phone"></i>
-              </a>
-            </li>
-          </ul>
+
+        <div className="right">
+          <h4>About Pet Reunite</h4>
+          <p></p>
+          <div className="social">
+            <a href="https://github.com/Abou2022" target="_blanc">
+              {" "}
+              <FaGithub
+                size={40}
+                style={{ color: "#fff", marginRight: "1rem" }}
+              />
+            </a>
+
+            <a href="http://www.linkedin.com/in/bakary-sylla" target="_blanc">
+              <FaLinkedin
+                size={40}
+                style={{ color: "#fff", marginRight: "1rem" }}
+              />
+            </a>
+          </div>
         </div>
       </div>
-    </footer>
+    </div>
   );
 };
 
