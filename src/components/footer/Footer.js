@@ -45,7 +45,12 @@ const Footer = () => {
 
         <div className="right">
           <h4>About Pet Reunite</h4>
-          <p></p>
+          <p>
+            Passionate animal lover and tech enthusiast dedicated to creating a
+            user-friendly platform for reuniting lost pets with their owners,
+            leveraging my skills in web development and a deep empathy for the
+            bond between humans and their furry companions.
+          </p>
           <div className="social">
             <a href="https://github.com/Abou2022" target="_blanc">
               {" "}
