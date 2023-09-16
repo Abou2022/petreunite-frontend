@@ -31,6 +31,14 @@ const HomePage = () => {
             Log In
           </Link>
         </section>
+
+        <section className="browse-section">
+          <h2>Browse</h2>
+          <p>Just Browse your pet</p>
+          <Link to="/browse" className="btn-primary">
+            Browse
+          </Link>
+        </section>
       </main>
     </div>
   );
