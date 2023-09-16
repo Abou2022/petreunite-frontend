@@ -32,12 +32,6 @@ const HomePage = () => {
           </Link>
         </section>
       </main>
-
-      {/* <footer>
-        <p>
-          &copy; {new Date().getFullYear()} PetReunite. All rights reserved.
-        </p>
-      </footer> */}
     </div>
   );
 };
