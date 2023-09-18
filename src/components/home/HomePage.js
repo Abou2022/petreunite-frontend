@@ -11,7 +11,7 @@ const HomePage = () => {
       </header>
 
       <main>
-        <section className="signup-section">
+        <section className="feature-section">
           <h2>Sign Up</h2>
           <p>
             Join our community and help reunite lost pets with their owners.
@@ -21,7 +21,7 @@ const HomePage = () => {
           </Link>
         </section>
 
-        <section className="login-section">
+        <section className="feature-section">
           <h2>Login</h2>
           <p>
             Already a member? Log in to report lost or found pets and make a
@@ -32,7 +32,7 @@ const HomePage = () => {
           </Link>
         </section>
 
-        <section className="browse-section">
+        <section className="feature-section">
           <h2>Browse</h2>
           <p>Just Browse your pet</p>
           <Link to="/browse" className="btn-primary">
