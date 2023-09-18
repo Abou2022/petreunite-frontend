@@ -1,12 +1,11 @@
-main {
+/* .browse-page {
   margin: 0;
   padding: 0;
-}
-body {
-  font-family: Arial, sans-serif;
   background-image: url(../../assets/CatReunite.jpg);
-  background-size: cover;
+  background-size: cover; 
   background-repeat: no-repeat;
   background-attachment: fixed;
-  color: rgb(249, 255, 65);
+} */
+.browse-page {
+  color: white;
 }

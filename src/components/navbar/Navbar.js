@@ -1,62 +1,62 @@
 import "../navbar/Navbar.css";
-
-//import useState when used
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-
-// to add icons I will import first
-// I have to precise what categorie of icons I added "fa"
 import { FaBars, FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
-  // I will use useState to change icons hamberger state
   const [click, setClick] = useState(false);
+  const [scrolling, setScrolling] = useState(false);
+
   const handleClick = () => setClick(!click);
 
-  const [color, setColor] = useState(false);
-  const changeColor = () => {
+  const changeColorOnScroll = () => {
     if (window.scrollY >= 100) {
-      setColor(true);
+      setScrolling(true);
     } else {
-      setColor(false);
+      setScrolling(false);
     }
   };
 
-  window.addEventListener("scroll", changeColor);
+  useEffect(() => {
+    window.addEventListener("scroll", changeColorOnScroll);
+    return () => {
+      window.removeEventListener("scroll", changeColorOnScroll);
+    };
+  }, []);
 
   return (
-    <div className={color ? "header header-bg" : "header"}>
-      <Link to="/">
-        <h1>Welcome to PetReunite</h1>
-        <p>Reuniting Pets with Their Owners</p>
-      </Link>
-      {/* Create a class to style the navbar */}
-      {/* add if condition to display menu when you click on burguer icons  */}
-      <ul className={click ? "nav-menu active" : "nav-menu"}>
-        <li>
-          <Link to="/">Welcome</Link>
-        </li>
-        <li>
-          <Link to="/">Add Pet Lost/found</Link>
-        </li>
-        <li>
-          <Link to="/about">About Developer</Link>
-        </li>
-        <li>
-          <Link to="/contact">Contact</Link>
-        </li>
-      </ul>
-      {/* Add icons bambuger bar */}
-      {/* hide the icons until we change the screen  */}
-      <div className="hamburger" onClick={handleClick}>
-        {/* added statement to avoid diplay both icons in the same time suit case */}
-        {click ? (
-          <FaTimes size={20} style={{ color: "#fff" }} />
-        ) : (
-          <FaBars size={20} style={{ color: "#fff" }} />
-        )}
+    <nav className={scrolling ? "navbar scrolling" : "navbar"}>
+      <div className="navbar-container">
+        <Link to="/" className="navbar-logo">
+          PetReunite
+        </Link>
+        <div className="menu-icon" onClick={handleClick}>
+          {click ? <FaTimes /> : <FaBars />}
+        </div>
+        <ul className={click ? "nav-menu active" : "nav-menu"}>
+          <li className="nav-item">
+            <Link to="/" className="nav-links">
+              Home
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/add-pet" className="nav-links">
+              Add Pet Lost/Found
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/about" className="nav-links">
+              About Developer
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/contact" className="nav-links">
+              Contact
+            </Link>
+          </li>
+        </ul>
       </div>
-    </div>
+    </nav>
   );
 };
 
