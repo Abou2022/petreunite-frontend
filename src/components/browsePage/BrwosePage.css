@@ -1,0 +1,8 @@
+main {
+  margin: 0;
+  padding: 0;
+  background-image: url(../../assets/CatReunite.jpg);
+  background-size: cover; /* Adjust to your needs */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
