@@ -31,7 +31,7 @@ header p {
 }
 
 /* Main content styles */
-main {
+.home-page main {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -93,7 +93,7 @@ section:hover {
 
 /* Responsive styles for smaller screens */
 @media (max-width: 768px) {
-  main {
+  .home-page main {
     flex-direction: column;
     align-items: center;
   }

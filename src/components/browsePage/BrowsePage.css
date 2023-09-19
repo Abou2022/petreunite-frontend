@@ -1,11 +1,11 @@
-/* .browse-page {
+.browse-page {
   margin: 0;
   padding: 0;
   background-image: url(../../assets/CatReunite.jpg);
-  background-size: cover; 
+  background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-} */
-.browse-page {
-  color: white;
+}
+.browse-page main {
+  color: black;
 }
