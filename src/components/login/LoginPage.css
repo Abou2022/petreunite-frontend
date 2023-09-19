@@ -1,5 +1,5 @@
 /* Login Form Styles */
-.container {
+.loginPage .container {
   max-width: 400px;
   margin: 0 auto;
   padding: 20px;
@@ -9,24 +9,24 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-h2 {
+.loginPage h2 {
   text-align: center;
   margin-bottom: 20px;
   color: #333;
 }
 
-form {
+.loginPage form {
   display: flex;
   flex-direction: column;
 }
 
-label {
+.loginPage label {
   font-weight: 600;
   margin-bottom: 8px;
 }
 
-input[type="email"],
-input[type="password"] {
+.loginPage input[type="email"],
+.loginPage input[type="password"] {
   padding: 10px;
   margin-bottom: 15px;
   border: 1px solid #ccc;
@@ -34,7 +34,7 @@ input[type="password"] {
   font-size: 16px;
 }
 
-button[type="submit"] {
+.loginPage button[type="submit"] {
   background-color: #0078d4;
   color: #fff;
   border: none;
@@ -44,6 +44,6 @@ button[type="submit"] {
   cursor: pointer;
 }
 
-button[type="submit"]:hover {
+.loginPage button[type="submit"]:hover {
   background-color: #005ea2;
 }

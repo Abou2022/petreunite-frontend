@@ -17,7 +17,7 @@ function LoginPage() {
   };
 
   return (
-    <div>
+    <div className="loginPage">
       <h2>Login</h2>
       <form onSubmit={handleSubmit}>
         <div>
