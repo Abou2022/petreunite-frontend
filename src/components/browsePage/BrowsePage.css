@@ -5,7 +5,19 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  color: white;
+  text-align: center; /* Center-align text */
+  padding: 100px 0; /* Add padding for better spacing */
+  font-family: Arial, Helvetica, sans-serif;
 }
-.browse-page main {
+
+/* .browse-page h1,
+.browse-page h3 {
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+} */
+
+.browse-page .browse-title {
+  background-color: white;
   color: black;
 }
