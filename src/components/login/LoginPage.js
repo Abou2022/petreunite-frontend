@@ -1,6 +1,7 @@
+import "../login/LoginPage.css";
 import React, { useState } from "react";
 
-function Login() {
+function LoginPage() {
   // State to store user input
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -43,4 +44,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default LoginPage;
