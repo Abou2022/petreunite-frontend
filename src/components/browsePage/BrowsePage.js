@@ -2,29 +2,34 @@ import "../browsePage/BrowsePage.css";
 import React, { useState, useEffect } from "react";
 
 const BrowsePage = () => {
-  const [furryList, setFurryList] = useState([]);
+  const [dbFurrys, setDbFurrys] = useState([]);
 
   useEffect(() => {
     // Make an HTTP request to fetch the list of pets
     fetch("/api/furry")
-      .then((response) => response.json())
-      .then((furryList) => setFurryList(furryList))
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((dbFurrys) => setDbFurrys(dbFurrys))
       .catch((error) => console.error("Error fetching pets:", error));
   }, []);
 
   return (
-    <body className="browse-page">
+    <div className="browse-page">
       <main>
-        <div className="browse-title">
-          <h1>Welcome to Lost Pet page</h1>
-          <h3>Check the list of pet found or lost</h3>
-          <h3>To add, modify or delete if found, you need to login</h3>
-        </div>
+        <section className="browse-title">
+          <h1>Welcome to Lost Pet Page</h1>
+          <h3>Check the list of pets found or lost</h3>
+          <h3>To add, modify, or delete if found, you need to login</h3>
+        </section>
 
-        <div className="pet-list">
-          <h2>Pet List:</h2>
+        <section className="pet-list">
+          <h1>Pet List:</h1>
           <ul>
-            {furryList.map((furry) => (
+            {dbFurrys.map((furry) => (
               <li key={furry.id}>
                 <strong>Name:</strong> {furry.name}
                 <br />
@@ -33,9 +38,9 @@ const BrowsePage = () => {
               </li>
             ))}
           </ul>
-        </div>
+        </section>
       </main>
-    </body>
+    </div>
   );
 };
 
