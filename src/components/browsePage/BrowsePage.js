@@ -22,8 +22,8 @@ const BrowsePage = () => {
   }, []);
 
   return (
-    <body className="browse-page">
-      <main>
+    <div>
+      <main className="browse-page">
         <section className="browse-title">
           <h1>Welcome to Lost Pet Page</h1>
           <h3>Check the list of pets found or lost</h3>
@@ -43,7 +43,7 @@ const BrowsePage = () => {
           </ul>
         </section>
       </main>
-    </body>
+    </div>
   );
 };
 
