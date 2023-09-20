@@ -1,10 +1,12 @@
-import "../home/HomePage.css";
 import React from "react";
 import { Link } from "react-router-dom";
+import "./HomePage.css"; // Import the CSS file
 
 const HomePage = () => {
   return (
-    <div className="home-page">
+    <div className="home-page-container">
+      {" "}
+      {/* Add the class here */}
       <header>
         <h1>Welcome to PetReunite</h1>
         <p>Reuniting Pets with Their Owners</p>

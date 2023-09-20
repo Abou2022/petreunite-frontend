@@ -22,7 +22,7 @@ const BrowsePage = () => {
   }, []);
 
   return (
-    <div>
+    <div className="browse-page-container">
       <main className="browse-page">
         <section className="browse-title">
           <h1>Welcome to Lost Pet Page</h1>
