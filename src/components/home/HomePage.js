@@ -9,7 +9,6 @@ const HomePage = () => {
         <h1>Welcome to PetReunite</h1>
         <p>Reuniting Pets with Their Owners</p>
       </header>
-
       <main>
         <section className="signup-section">
           <h2>Sign Up</h2>

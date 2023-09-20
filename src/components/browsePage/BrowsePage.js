@@ -9,23 +9,26 @@ const BrowsePage = () => {
     fetch("/api/furry")
       .then((response) => {
         if (!response.ok) {
+          console.error(`HTTP error! Status: ${response.status}`);
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
         return response.json();
       })
-      .then((dbFurrys) => setDbFurrys(dbFurrys))
+      .then((dbFurrys) => {
+        console.log("Received data:", dbFurrys); // Log the received data for debugging
+        setDbFurrys(dbFurrys);
+      })
       .catch((error) => console.error("Error fetching pets:", error));
   }, []);
 
   return (
-    <div className="browse-page">
+    <body className="browse-page">
       <main>
         <section className="browse-title">
           <h1>Welcome to Lost Pet Page</h1>
           <h3>Check the list of pets found or lost</h3>
           <h3>To add, modify, or delete if found, you need to login</h3>
         </section>
-
         <section className="pet-list">
           <h1>Pet List:</h1>
           <ul>
@@ -40,7 +43,7 @@ const BrowsePage = () => {
           </ul>
         </section>
       </main>
-    </div>
+    </body>
   );
 };
 
