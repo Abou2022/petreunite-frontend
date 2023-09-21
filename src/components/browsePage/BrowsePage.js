@@ -33,7 +33,7 @@ const BrowsePage = () => {
     fetchData();
   }, []);
   return (
-    <div className="browse-page-container">
+    <body className="browse-page-container">
       <main className="browse-page">
         <section className="browse-title">
           <h1>Welcome to Lost Pet Page</h1>
@@ -68,7 +68,7 @@ const BrowsePage = () => {
           </ul>
         </section>
       </main>
-    </div>
+    </body>
   );
 };
 
