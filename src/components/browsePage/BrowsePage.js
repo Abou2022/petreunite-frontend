@@ -57,6 +57,12 @@ const BrowsePage = () => {
                 <br />
                 <strong>Last location:</strong> {furry.lastLocation}
                 <br />
+                <strong>Pet lost:</strong> {furry.petLost}
+                <br />
+                <strong>Pet found:</strong> {furry.petFound}
+                <br />
+                <strong>Pet Picture:</strong> {furry.picture}
+                <br />
               </li>
             ))}
           </ul>

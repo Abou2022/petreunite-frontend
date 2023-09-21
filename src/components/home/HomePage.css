@@ -48,7 +48,15 @@ header p {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   color: white;
 }
-section:hover {
+.signup-section:hover {
+  background-color: #fff;
+  color: #333;
+}
+.login-section:hover {
+  background-color: #fff;
+  color: #333;
+}
+.browse-section:hover {
   background-color: #fff;
   color: #333;
 }
