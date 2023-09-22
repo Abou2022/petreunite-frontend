@@ -4,13 +4,15 @@
   box-sizing: border-box;
 }
 
-body {
+.home-page {
   font-family: Arial, sans-serif;
   background-image: url(../../assets/GermanDog.webp);
   background-size: cover; /* Adjust to your needs */
   background-repeat: no-repeat;
   background-attachment: fixed;
   color: #333;
+  height: 100vh;
+  /* width: 100vh; */
 }
 
 /* Header styles */
