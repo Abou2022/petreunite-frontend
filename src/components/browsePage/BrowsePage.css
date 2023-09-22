@@ -1,6 +1,7 @@
 .browse-page-container {
   font-family: Arial, sans-serif;
-  background-image: url(../../assets/CatReunite.jpg);
+  /* background-image: url(../../assets/CatReunite.jpg); */
+  background-image: url(../../assets/Hamster.avif);
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;

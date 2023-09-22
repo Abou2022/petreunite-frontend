@@ -15,7 +15,6 @@ const Footer = () => {
               <p>United States</p>
             </div>
           </div>
-
           <div className="email">
             <h4>
               <FaMailBulk
