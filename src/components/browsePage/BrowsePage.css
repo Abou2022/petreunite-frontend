@@ -1,6 +1,5 @@
 .browse-page-container {
   font-family: Arial, sans-serif;
-  /* background-image: url(../../assets/CatReunite.jpg); */
   background-image: url(../../assets/Hamster.avif);
   background-size: cover;
   background-repeat: no-repeat;
@@ -9,7 +8,6 @@
   text-align: center;
   padding: 100px 0;
   height: 200vh;
-  /* width: 100vh; */
 }
 
 /* Header styles for BrowsePage */
@@ -37,63 +35,43 @@
   padding: 2rem;
 }
 
-.browse-page-container .pet-list {
-  text-align: left;
-  width: 80%;
-  margin-top: 2rem;
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 1rem;
+/* Remove .pet-list styles */
+
+/* New card styles */
+.project-container {
+  max-width: 1140px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Adjust the number of columns */
+  grid-gap: 20px; /* Adjust the gap between cards */
+  padding-bottom: 2rem; /* Add spacing at the bottom */
 }
 
-.browse-page-container .pet-list h1 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.browse-page-container .pet-list ul {
-  list-style: none;
-  padding: 0;
-}
-
-.browse-page-container .pet-list li {
-  margin-bottom: 1rem;
-  border-bottom: 1px solid #fff;
-  padding-bottom: 1rem;
-}
-/*New CSS*/
-/* .project-card {
+.project-card {
   background: #1a1919;
   padding: 1.2rem 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
 .project-title {
   color: #fff;
   padding: 1rem 0;
+  font-size: 1.5rem; /* Adjust the title font size */
 }
+
 .pro-details {
   padding-bottom: 1rem;
   font-size: 1.1rem;
   text-align: justify;
 }
-.project-container {
-  max-width: 1140px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 40px;
-  padding-bottom: 5rem;
-} */
 
 /* Responsive styles for smaller screens */
 @media (max-width: 768px) {
-  .browse-page-container main {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .browse-page-container .pet-list {
-    width: 90%;
-    margin-top: 1rem;
+  .project-container {
+    grid-template-columns: repeat(
+      1,
+      1fr
+    ); /* Change to a single column for small screens */
   }
 }
