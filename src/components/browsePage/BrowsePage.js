@@ -36,6 +36,8 @@ const BrowsePage = () => {
               <p> Major Color: {furry.color}</p>
               <p>Particular Sign: {furry.particularSign}</p>
               <p>Last Location: {furry.lastLocation}</p>
+              <p>Last Day: {furry.lastDay}</p>
+              <p>Last Time: {furry.lastTime}</p>
             </div>
           </div>
         ))}

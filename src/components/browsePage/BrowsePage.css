@@ -7,7 +7,9 @@
   color: white;
   text-align: center;
   padding: 100px 0;
-  height: 200vh;
+  /* To update the pahge when You get more data */
+  min-height: 100vh;
+  flex-grow: 1;
 }
 
 /* Header styles for BrowsePage */
@@ -35,27 +37,29 @@
   padding: 2rem;
 }
 
-/* Remove .pet-list styles */
-
 /* New card styles */
 .project-container {
   max-width: 1140px;
   margin: auto;
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Adjust the number of columns */
+  grid-template-columns: repeat(3, 1fr); /* Adjust the number of columns */
   grid-gap: 20px; /* Adjust the gap between cards */
   padding-bottom: 2rem; /* Add spacing at the bottom */
 }
 
 .project-card {
-  background: #1a1919;
+  /* background: #1a1919; */
+  background: rgba(26, 25, 25, 0.8);
   padding: 1.2rem 1rem;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease;
 }
-
+.project-card:hover {
+  background: rgba(26, 25, 25, 0.9);
+}
 .project-title {
-  color: #fff;
+  color: #e941ff;
   padding: 1rem 0;
   font-size: 1.5rem; /* Adjust the title font size */
 }
@@ -64,6 +68,7 @@
   padding-bottom: 1rem;
   font-size: 1.1rem;
   text-align: justify;
+  color: rgb(39, 219, 251);
 }
 
 /* Responsive styles for smaller screens */
