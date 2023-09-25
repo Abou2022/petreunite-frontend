@@ -1,56 +1,75 @@
-/* Login Page Styles */
+/* LoginPage.css */
+
 .login-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: calc(100vh - 200px); /* Adjust as needed */
-  background-color: #f0f0f0; /* Background color for the login section */
+  min-height: 100vh;
+  background-color: #f5f5f5; /* Set your desired background color */
 }
 
-.login-wrapper .container {
-  max-width: 400px;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  background-color: #fff;
+.container {
+  background-color: #ffffff;
+  border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 400px;
 }
 
-.login-wrapper h2 {
+h2 {
   text-align: center;
+  font-size: 24px;
   margin-bottom: 20px;
-  color: #333;
 }
 
-.login-wrapper form {
+form {
   display: flex;
   flex-direction: column;
 }
 
-.login-wrapper label {
-  font-weight: 600;
-  margin-bottom: 8px;
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
 }
 
-.login-wrapper input[type="email"],
-.login-wrapper input[type="password"] {
+input[type="email"],
+input[type="password"] {
   padding: 10px;
   margin-bottom: 15px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  font-size: 16px;
 }
 
-.login-wrapper button[type="submit"] {
-  background-color: #0078d4;
+button[type="submit"] {
+  background-color: #007bff; /* Set your desired button color */
   color: #fff;
+  padding: 10px;
   border: none;
   border-radius: 4px;
-  padding: 10px;
-  font-size: 16px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.login-wrapper button[type="submit"]:hover {
-  background-color: #005ea2;
+button[type="submit"]:hover {
+  background-color: #0056b3; /* Hover color */
+}
+
+p {
+  text-align: center;
+  margin-top: 15px;
+}
+
+/* Separate style for the registration form */
+form:last-child {
+  margin-top: 20px;
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 480px) {
+  .container {
+    width: 100%;
+    padding: 10px;
+  }
 }
