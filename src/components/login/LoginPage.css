@@ -5,7 +5,11 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: #f5f5f5; /* Set your desired background color */
+  /* background-color: #f5f5f5; */
+  background-image: url(../../assets/CatReunite.jpg);
+  background-size: cover; /* Adjust to your needs */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .container {
