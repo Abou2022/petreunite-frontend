@@ -33,30 +33,6 @@ function LoginPage() {
   };
 
   // Function to handle registration
-  const handleRegister = async (e) => {
-    e.preventDefault();
-
-    try {
-      const response = await fetch("/api/register", {
-        // Replace with your registration API endpoint
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, password }),
-      });
-
-      if (!response.ok) {
-        throw new Error("Registration failed");
-      }
-
-      // Successful registration, handle user data or redirect to another page
-      const userData = await response.json();
-      console.log("Registered user data:", userData);
-    } catch (error) {
-      console.error("Registration error:", error);
-    }
-  };
 
   return (
     <div className="login-wrapper">
@@ -83,30 +59,6 @@ function LoginPage() {
           </div>
           <button type="submit">Login</button>
         </form>
-        <div>
-          <p>Don't have an account? Register below:</p>
-          <form onSubmit={handleRegister}>
-            <div>
-              <label>Email:</label>
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
-            </div>
-            <div>
-              <label>Password:</label>
-              <input
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-              />
-            </div>
-            <button type="submit">Register</button>
-          </form>
-        </div>
       </div>
     </div>
   );
