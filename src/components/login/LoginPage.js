@@ -1,43 +1,44 @@
+// login.js
+
 import "../login/LoginPage.css";
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+const { users } = require("../path/to/seed"); // Import the seed data
 
 function LoginPage() {
   // State to store user input
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   // Function to handle login
   const handleLogin = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await fetch("/api/login", {
-        // Replace with your login API endpoint
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, password }),
-      });
+      // Check if the user exists in the seed data
+      const user = users.find(
+        (u) => u.email === email && u.password === password
+      );
 
-      if (!response.ok) {
+      if (!user) {
         throw new Error("Login failed");
       }
 
       // Successful login, handle user data or redirect to another page
-      const userData = await response.json();
-      console.log("Logged in user data:", userData);
+      console.log("Logged in user data:", user);
+
+      // Redirect to the browser page or perform other actions
+      navigate("/browse");
     } catch (error) {
       console.error("Login error:", error);
     }
   };
 
-  // Function to handle registration
-
   return (
     <div className="login-wrapper">
       <div className="container">
-        <h2>Login or Register</h2>
+        <h2>Login</h2>
         <form onSubmit={handleLogin}>
           <div>
             <label>Email:</label>
