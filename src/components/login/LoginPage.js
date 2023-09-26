@@ -3,7 +3,9 @@
 import "../login/LoginPage.css";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-const { users } = require("../path/to/seed"); // Import the seed data
+// const { users } = require("../path/to/seed");
+const url = "http://localhost:3001/api/user";
+console.log("........", url);
 
 function LoginPage() {
   // State to store user input
@@ -16,19 +18,23 @@ function LoginPage() {
     e.preventDefault();
 
     try {
-      // Check if the user exists in the seed data
-      const user = users.find(
-        (u) => u.email === email && u.password === password
-      );
+      const response = await fetch("/api/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      });
 
-      if (!user) {
+      if (!response.ok) {
         throw new Error("Login failed");
       }
 
       // Successful login, handle user data or redirect to another page
-      console.log("Logged in user data:", user);
+      const userData = await response.json();
+      console.log("Logged in user data:", userData);
 
-      // Redirect to the browser page or perform other actions
+      // Redirect to the browser page
       navigate("/browse");
     } catch (error) {
       console.error("Login error:", error);
