@@ -1,37 +1,33 @@
-// login.js
-
 import "../login/LoginPage.css";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-// const { users } = require("../path/to/seed");
-const url = "http://localhost:3001/api/user";
-console.log("........", url);
+import axios from "axios"; // Import Axios
 
 function LoginPage() {
   // State to store user input
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const url = "http://localhost:3001/api/login";
 
   // Function to handle login
   const handleLogin = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await fetch("/api/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, password }),
+      const response = await axios.post(url, {
+        // Use Axios to send a POST request
+        email,
+        password,
       });
 
-      if (!response.ok) {
+      if (!response.data.success) {
+        // Assuming the response format includes a 'success' field
         throw new Error("Login failed");
       }
 
       // Successful login, handle user data or redirect to another page
-      const userData = await response.json();
+      const userData = response.data.userData; // Replace 'userData' with the actual response data field
       console.log("Logged in user data:", userData);
 
       // Redirect to the browser page
