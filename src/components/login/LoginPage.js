@@ -1,37 +1,39 @@
 import "../login/LoginPage.css";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios"; // Import Axios
 
 function LoginPage() {
   // State to store user input
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
-  const url = "http://localhost:3001/api/login";
+  // const url = "http://localhost:3001/api/login";
 
   // Function to handle login
   const handleLogin = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await axios.post(url, {
-        // Use Axios to send a POST request
-        email,
-        password,
+      const response = await fetch("http://localhost:3001/api/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
       });
 
-      if (!response.data.success) {
-        // Assuming the response format includes a 'success' field
+      if (response.ok) {
+        console.log("Welcome in!");
+
+        // Successful login, handle user data or redirect to another page
+        const userData = await response.json(); // Assuming your user data is in the response JSON
+        console.log("Logged in user data:", userData);
+
+        // Redirect to the browser page
+        navigate("/browse");
+      } else {
         throw new Error("Login failed");
       }
-
-      // Successful login, handle user data or redirect to another page
-      const userData = response.data.userData; // Replace 'userData' with the actual response data field
-      console.log("Logged in user data:", userData);
-
-      // Redirect to the browser page
-      navigate("/browse");
     } catch (error) {
       console.error("Login error:", error);
     }
