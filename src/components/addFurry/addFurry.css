@@ -1,0 +1,44 @@
+/* addFurry.css */
+
+.add-furry-wrapper {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.add-furry-wrapper h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.add-furry-wrapper label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.add-furry-wrapper input,
+.add-furry-wrapper textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.add-furry-wrapper button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.add-furry-wrapper button:hover {
+  background-color: #0056b3;
+}
