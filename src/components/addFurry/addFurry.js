@@ -38,6 +38,21 @@ function AddFurry() {
 
       if (response.status === 200) {
         console.log("Furry information submitted successfully!");
+        // Clear the form after successful submission (optional)
+        setFormData({
+          name: "",
+          furryDescription: "",
+          animal: "",
+          color: "",
+          breed: "",
+          particularSign: "",
+          lastLocation: "",
+          lastDay: "",
+          lastTime: "",
+          petLost: false,
+          petFound: false,
+          picture: "",
+        });
       }
     } catch (error) {
       console.error("Error submitting furry information:", error);
@@ -49,8 +64,7 @@ function AddFurry() {
     <div className="add-furry-wrapper">
       <h2>Add Furry Information</h2>
       <form onSubmit={handleSubmit}>
-        {/* Add input fields for furry information */}
-        {/* Example: */}
+        {/* Input fields for furry information */}
         <div>
           <label>Name:</label>
           <input
@@ -62,8 +76,6 @@ function AddFurry() {
           />
         </div>
 
-        {/* Add more input fields for other furry information */}
-        {/* Example: */}
         <div>
           <label>Furry Description:</label>
           <textarea
@@ -74,8 +86,115 @@ function AddFurry() {
           />
         </div>
 
-        {/* Add other input fields for the remaining furry details */}
-        {/* ...
+        {/* Add more input fields for other furry information */}
+        <div>
+          <label>Animal:</label>
+          <input
+            type="text"
+            name="animal"
+            value={formData.animal}
+            onChange={handleInputChange}
+            required
+          />
+        </div>
+
+        <div>
+          <label>Color:</label>
+          <input
+            type="text"
+            name="color"
+            value={formData.color}
+            onChange={handleInputChange}
+            required
+          />
+        </div>
+
+        <div>
+          <label>Breed:</label>
+          <input
+            type="text"
+            name="breed"
+            value={formData.breed}
+            onChange={handleInputChange}
+            required
+          />
+        </div>
+
+        <div>
+          <label>Particular Sign:</label>
+          <input
+            type="text"
+            name="particularSign"
+            value={formData.particularSign}
+            onChange={handleInputChange}
+            required
+          />
+        </div>
+
+        <div>
+          <label>Last Location:</label>
+          <input
+            type="text"
+            name="lastLocation"
+            value={formData.lastLocation}
+            onChange={handleInputChange}
+            required
+          />
+        </div>
+
+        <div>
+          <label>Last Day:</label>
+          <input
+            type="date"
+            name="lastDay"
+            value={formData.lastDay}
+            onChange={handleInputChange}
+            required
+          />
+        </div>
+
+        <div>
+          <label>Last Time:</label>
+          <input
+            type="time"
+            name="lastTime"
+            value={formData.lastTime}
+            onChange={handleInputChange}
+            required
+          />
+        </div>
+
+        <div>
+          <label>Pet Lost:</label>
+          <input
+            type="checkbox"
+            name="petLost"
+            checked={formData.petLost}
+            onChange={handleInputChange}
+            required
+          />
+        </div>
+
+        <div>
+          <label>Pet Found:</label>
+          <input
+            type="checkbox"
+            name="petFound"
+            checked={formData.petFound}
+            onChange={handleInputChange}
+            required
+          />
+        </div>
+
+        <div>
+          <label>Picture URL:</label>
+          <input
+            type="text"
+            name="picture"
+            value={formData.picture}
+            onChange={handleInputChange}
+          />
+        </div>
 
         {/* Submit button */}
         <button type="submit">Submit</button>
