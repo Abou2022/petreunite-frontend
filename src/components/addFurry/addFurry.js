@@ -186,7 +186,7 @@ function AddFurry() {
           />
         </div>
 
-        <div>
+        {/* <div>
           <label>Picture URL:</label>
           <input
             type="text"
@@ -194,7 +194,7 @@ function AddFurry() {
             value={formData.picture}
             onChange={handleInputChange}
           />
-        </div>
+        </div> */}
 
         {/* Submit button */}
         <button type="submit">Submit</button>
