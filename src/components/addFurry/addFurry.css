@@ -6,7 +6,11 @@
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  background-color: #fff;
+  /* background-color: #fff; */
+  background-image: url(../../assets/CatReunite.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
