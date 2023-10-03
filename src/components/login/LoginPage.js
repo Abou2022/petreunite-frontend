@@ -1,3 +1,4 @@
+import "./LoginPage.css";
 import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -10,7 +11,7 @@ export const LoginPage = () => {
   const navigate = useNavigate();
 
   const onLogInClicked = async () => {
-    alter("login is not implemented");
+    // alter("login is not implemented");
   };
   return (
     <div className="login-page">
@@ -41,3 +42,5 @@ export const LoginPage = () => {
     </div>
   );
 };
+
+export default LoginPage;
