@@ -1,80 +1,76 @@
-/* LoginPage.module.css */
+/* LoginPage.css */
 
-.login-page {
-  background-image: url("../../assets/CatReunite.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
+/* Container for the login page */
+.login-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  min-height: 100vh; /* Ensures the container takes the full viewport height */
+  background-image: url("../../assets/CatReunite.jpg"); /* Your background image path */
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-.login-container {
-  background-color: rgba(255, 255, 255, 0.95);
+/* Styling for the login box */
+.login-box {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.9
+  ); /* Semi-transparent white background */
   border-radius: 8px;
-  padding: 30px;
+  padding: 20px;
+  width: 350px; /* Adjust this as needed */
   text-align: center;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-  max-width: 400px;
-  width: 100%;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.login-container h1 {
-  color: #1877f2; /* Facebook blue color */
+.login-box h1 {
   margin-bottom: 20px;
 }
 
-.login-error {
-  color: #d93025; /* Red color for errors */
-  margin-bottom: 10px;
-}
-
-.form-group {
-  margin-bottom: 15px;
-}
-
+/* Styling for the form elements */
 .login-input {
   width: 100%;
-  padding: 12px;
-  font-size: 16px;
+  padding: 10px;
+  margin-bottom: 15px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
 
 .login-button {
   width: 100%;
-  padding: 15px;
-  background-color: #1877f2; /* Facebook blue color */
+  padding: 10px;
+  background-color: #1877f2; /* Facebook blue */
   color: white;
-  font-size: 18px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
 }
 
 .login-button:hover {
-  background-color: #1457c0; /* Slightly darker blue on hover */
+  background-color: #166fe5; /* Darker shade of blue on hover */
 }
 
-.forgot-password {
-  color: #1877f2; /* Facebook blue color */
-  text-decoration: none;
+/* Styling for the forgot password and sign-up links */
+.login-links {
+  display: flex;
+  justify-content: space-between;
   margin-top: 10px;
-  display: inline-block;
-  font-size: 16px;
 }
 
-.signup-link {
-  color: #1877f2; /* Facebook blue color */
-  text-decoration: none;
-  margin-top: 10px;
-  display: inline-block;
-  font-size: 16px;
+/* Style for the failure message */
+.fail {
+  color: #ff0000; /* Red color for error messages */
 }
 
-.signup-link:hover {
-  text-decoration: underline;
+/* Center align text in the buttons */
+button {
+  text-align: center;
+}
+
+/* Remove default button styles */
+button:focus {
+  outline: none;
 }
