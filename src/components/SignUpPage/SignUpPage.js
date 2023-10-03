@@ -11,12 +11,12 @@ export const SignUpPage = () => {
   const navigate = useNavigate();
 
   const onSignUpClicked = async () => {
-    alter("login is not implemented");
+    //     alter("sign up is not implemented yet");
   };
   return (
     <div className="login-container">
       <div className="login-box">
-        <h1>Log In</h1>
+        <h1>Sign Up</h1>
         {errorMessage && <div className="fail">{errorMessage}</div>}
         <input
           className="login-input"
@@ -51,11 +51,8 @@ export const SignUpPage = () => {
           Sign Up
         </button>
         <div className="login-links">
-          <button onClick={navigate("/forgot-password")}>
-            Forgot your password?
-          </button>
-          <button onClick={navigate("/signup")}>
-            Don't have an account? Sign Up
+          <button onClick={() => navigate("/login")}>
+            Already have an account? Log In
           </button>
         </div>
       </div>

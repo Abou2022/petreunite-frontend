@@ -43,7 +43,7 @@ export const LoginPage = () => {
           <button onClick={navigate("/forgot-password")}>
             Forgot your password?
           </button>
-          <button onClick={navigate("/signup")}>
+          <button onClick={() => navigate("/signup")}>
             Don't have an account? Sign Up
           </button>
         </div>

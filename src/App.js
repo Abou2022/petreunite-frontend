@@ -5,6 +5,7 @@ import Home from "./routes/Home";
 import Browse from "./routes/Browse";
 import Login from "./routes/Login";
 import AddPets from "./routes/AddPets";
+import SignUp from "./routes/SignUp";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/browse" element={<Browse />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
         <Route path="/add-pet" element={<AddPets />} />
       </Routes>
     </>
