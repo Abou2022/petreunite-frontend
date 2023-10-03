@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export const LoginPage = () => {
+  const [errorMessage, setErrorMessage] = useState("");
   const [emailValue, setEmailValue] = useState("");
   const [passwordValue, setPasswordValue] = useState("");
 
@@ -14,6 +15,7 @@ export const LoginPage = () => {
   return (
     <div className="login-page">
       <h1>Log In</h1>
+      {errorMessage && <div className="fail">{errorMessage}</div>}
       <input
         value={emailValue}
         onChange={(e) => setEmailValue(e.target.value)}
@@ -26,9 +28,16 @@ export const LoginPage = () => {
         type="password"
         placeholder="password"
       />
-      <button onClick={onLogInClicked}>Log In</button>
-      <button>Forgot your password?</button>
-      <button>Don't have an account? Sign Up</button>
+      <button disabled={!emailValue || !passwordValue} onClick={onLogInClicked}>
+        Log In
+      </button>
+      <button onClick={navigate("/forgot-password")}>
+        {" "}
+        Forgot your password?
+      </button>
+      <button onClick={navigate("/signup")}>
+        Don't have an account? Sign Up
+      </button>
     </div>
   );
 };
