@@ -32,6 +32,7 @@ export const LoginPage = () => {
           type="password"
           placeholder="password"
         />
+        <hr />
         <button
           className="login-button"
           disabled={!emailValue || !passwordValue}
