@@ -6,6 +6,8 @@ import Browse from "./routes/Browse";
 import Login from "./routes/Login";
 import AddPets from "./routes/AddPets";
 import SignUp from "./routes/SignUp";
+import { PrivateRoute } from "./components/auth/PrivateRoute";
+import UserInfo from "./routes/UserInfo";
 
 function App() {
   return (
@@ -16,6 +18,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/add-pet" element={<AddPets />} />
+        <Route path="/userInfo" element={<UserInfo />} />
       </Routes>
     </>
   );
