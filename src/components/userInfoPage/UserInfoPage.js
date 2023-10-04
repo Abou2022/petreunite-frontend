@@ -1,4 +1,5 @@
 import React from "react";
+import "../userInfoPage/UserInfoPage.css";
 
 export const UserInfoPage = () => {
   // Your user information rendering logic here

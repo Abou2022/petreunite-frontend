@@ -1,0 +1,20 @@
+.user-info-container {
+  background-image: url("../../assets/CatReunite.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff; /* Text color */
+  font-family: Arial, sans-serif;
+}
+
+.user-info-container h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+/* Add additional styles for user information rendering */
