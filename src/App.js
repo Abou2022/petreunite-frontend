@@ -6,7 +6,7 @@ import Browse from "./routes/Browse";
 import Login from "./routes/Login";
 import AddPets from "./routes/AddPets";
 import SignUp from "./routes/SignUp";
-import PrivateRoute from "./components/auth/PrivateRoute";
+// import PrivateRoute from "./components/auth/PrivateRoute";
 import UserInfo from "./routes/UserInfo";
 
 function App() {
@@ -19,7 +19,8 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/add-pet" element={<AddPets />} />
         {/* <PrivateRoute path="/userInfo" element={<UserInfo />} /> */}
-        <Route path="/userInfo" element={<PrivateRoute />} />
+        {/* <Route path="/userInfo" element={<PrivateRoute />} /> */}
+        <Route path="/userInfo" element={<UserInfo />} />
       </Routes>
     </>
   );

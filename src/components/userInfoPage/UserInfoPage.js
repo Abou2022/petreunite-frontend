@@ -7,7 +7,6 @@ export const UserInfoPage = () => {
   return (
     <div className="user-info-container">
       <h1>User Information</h1>
-      {/* Render user information */}
     </div>
   );
 };
