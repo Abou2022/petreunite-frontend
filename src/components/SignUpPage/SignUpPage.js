@@ -7,6 +7,8 @@ export const SignUpPage = () => {
   const [emailValue, setEmailValue] = useState("");
   const [passwordValue, setPasswordValue] = useState("");
   const [confirmPasswordValue, setConfirmPasswordValue] = useState("");
+  const [userFirstName, setUserFirstName] = useState("");
+  const [userLastName, setUserLastName] = useState("");
 
   const navigate = useNavigate();
 
@@ -18,12 +20,20 @@ export const SignUpPage = () => {
       <div className="login-box">
         <h1>Sign Up</h1>
         {errorMessage && <div className="fail">{errorMessage}</div>}
+
         <input
           className="login-input"
-          value={emailValue}
-          onChange={(e) => setEmailValue(e.target.value)}
-          type="email"
-          placeholder="someone@gmail.com"
+          value={userFirstName}
+          onChange={(e) => setUserFirstName(e.target.value)}
+          // type="password"
+          placeholder="First Name"
+        />
+        <input
+          className="login-input"
+          value={userLastName}
+          onChange={(e) => setUserLastName(e.target.value)}
+          // type="password"
+          placeholder="Last Name"
         />
         <input
           className="login-input"
@@ -31,6 +41,13 @@ export const SignUpPage = () => {
           onChange={(e) => setPasswordValue(e.target.value)}
           type="password"
           placeholder="password"
+        />
+        <input
+          className="login-input"
+          value={emailValue}
+          onChange={(e) => setEmailValue(e.target.value)}
+          type="email"
+          placeholder="someone@gmail.com"
         />
         <input
           className="login-input"
