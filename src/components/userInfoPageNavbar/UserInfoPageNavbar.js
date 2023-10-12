@@ -1,11 +1,11 @@
-// import "../navbar/Navbar.css";
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 const UserInfoPageNavbar = () => {
   const [click, setClick] = useState(false);
   const [scrolling, setScrolling] = useState(false);
+  const navigate = useNavigate();
 
   const handleClick = () => setClick(!click);
 
@@ -15,6 +15,13 @@ const UserInfoPageNavbar = () => {
     } else {
       setScrolling(false);
     }
+  };
+
+  const handleLogout = () => {
+    // Perform the log out action (e.g., clear user session or token)
+
+    // After log out, navigate to the Home page
+    navigate("/");
   };
 
   useEffect(() => {
@@ -55,9 +62,9 @@ const UserInfoPageNavbar = () => {
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/logout" className="nav-links">
+            <button className="nav-links" onClick={handleLogout}>
               Log Out
-            </Link>
+            </button>
           </li>
         </ul>
       </div>
