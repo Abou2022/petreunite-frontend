@@ -35,19 +35,20 @@ export const SignUpPage = () => {
           // type="password"
           placeholder="Last Name"
         />
-        <input
-          className="login-input"
-          value={passwordValue}
-          onChange={(e) => setPasswordValue(e.target.value)}
-          type="password"
-          placeholder="password"
-        />
+
         <input
           className="login-input"
           value={emailValue}
           onChange={(e) => setEmailValue(e.target.value)}
           type="email"
           placeholder="someone@gmail.com"
+        />
+        <input
+          className="login-input"
+          value={passwordValue}
+          onChange={(e) => setPasswordValue(e.target.value)}
+          type="password"
+          placeholder="password"
         />
         <input
           className="login-input"
