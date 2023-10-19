@@ -4,7 +4,12 @@ import React from "react";
 
 export const useToken = () => {
   const [token, setTokenInternal] = useState(() => {
-    return localStorage;
+    return localStorage.getItem("token");
   });
-  return <div>useToken</div>;
+  const setToken = (newToken) => {
+    localStorage.setItem("token", newToken);
+    setTokenInternal(newToken);
+  };
+  return [token, setToken];
+  //   return <div>useToken</div>;
 };
