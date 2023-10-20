@@ -16,13 +16,25 @@ export const SignUpPage = () => {
   const navigate = useNavigate();
 
   const onSignUpClicked = async () => {
-    const response = await axios.post("/api/signup", {
-      email: emailValue,
-      password: passwordValue,
-    });
-    const { token } = response.data;
-    setToken(token);
-    navigate("/userInfo");
+    if (passwordValue !== confirmPasswordValue) {
+      setErrorMessage("Passwords do not match.");
+      return;
+    }
+    try {
+      const response = await axios.post("api/signup", {
+        email: emailValue,
+        password: passwordValue,
+      });
+      const { token } = response.data;
+      setToken(token);
+      navigate("/userInfo");
+    } catch (error) {
+      if (error.response && error.response.data) {
+        setErrorMessage(error.response.data.message);
+      } else {
+        setErrorMessage("An error occurred during signup.");
+      }
+    }
   };
   return (
     <div className="login-container">
