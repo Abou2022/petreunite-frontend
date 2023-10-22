@@ -12,8 +12,9 @@ export const SignUpPage = () => {
   const [confirmPasswordValue, setConfirmPasswordValue] = useState("");
   const [userFirstName, setUserFirstName] = useState("");
   const [userLastName, setUserLastName] = useState("");
-
   const navigate = useNavigate();
+
+  axios.defaults.baseURL = "http://localhost:3001/";
 
   const onSignUpClicked = async () => {
     if (passwordValue !== confirmPasswordValue) {
