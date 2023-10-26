@@ -3,7 +3,6 @@ import axios from "axios";
 import "./addFurry.css";
 
 function AddFurry() {
-  // State to store form input values
   const [formData, setFormData] = useState({
     name: "",
     furryDescription: "",
@@ -38,7 +37,7 @@ function AddFurry() {
 
       if (response.status === 200) {
         console.log("Furry information submitted successfully!");
-        // Clear the form after successful submission (optional)
+        // Clear the form after successful submission
         setFormData({
           name: "",
           furryDescription: "",
@@ -56,7 +55,6 @@ function AddFurry() {
       }
     } catch (error) {
       console.error("Error submitting furry information:", error);
-      // Handle the error, display an error message, or perform other actions
     }
   };
 
@@ -64,7 +62,6 @@ function AddFurry() {
     <div className="add-furry-wrapper">
       <h2>Add Furry Information</h2>
       <form onSubmit={handleSubmit}>
-        {/* Input fields for furry information */}
         <div>
           <label>Name:</label>
           <input
@@ -75,7 +72,6 @@ function AddFurry() {
             required
           />
         </div>
-
         <div>
           <label>Furry Description:</label>
           <textarea
@@ -86,7 +82,6 @@ function AddFurry() {
           />
         </div>
 
-        {/* Add more input fields for other furry information */}
         <div>
           <label>Animal:</label>
           <input
@@ -195,8 +190,6 @@ function AddFurry() {
             onChange={handleInputChange}
           />
         </div> */}
-
-        {/* Submit button */}
         <button type="submit">Submit</button>
       </form>
     </div>
