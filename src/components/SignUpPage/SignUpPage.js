@@ -22,7 +22,7 @@ export const SignUpPage = () => {
       return;
     }
     try {
-      const response = await axios.post("/api/signup", {
+      const response = await axios.post("/signup", {
         email: emailValue,
         password: passwordValue,
       });
@@ -53,7 +53,6 @@ export const SignUpPage = () => {
           className="login-input"
           value={userLastName}
           onChange={(e) => setUserLastName(e.target.value)}
-          // type="password"
           placeholder="Last Name"
         />
 
