@@ -62,9 +62,9 @@ const UserInfoPageNavbar = () => {
             </Link>
           </li>
           <li className="nav-item">
-            <button className="nav-links" onClick={handleLogout}>
+            <Link className="nav-links" onClick={handleLogout}>
               Log Out
-            </button>
+            </Link>
           </li>
         </ul>
       </div>

@@ -22,7 +22,7 @@ export const SignUpPage = () => {
       return;
     }
     try {
-      const response = await axios.post("api/signup", {
+      const response = await axios.post("http://localhost:3001/api/signup", {
         email: emailValue,
         password: passwordValue,
       });
