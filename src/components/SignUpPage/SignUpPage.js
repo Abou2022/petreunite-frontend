@@ -34,9 +34,18 @@ export const SignUpPage = () => {
         email: emailValue,
         password: passwordValue,
       });
-      const { token } = response.data;
-      setToken(token);
-      navigate("/userInfo");
+
+      if (response.data && response.data.error === 409) {
+        setErrorMessage(
+          "Email already exists. Please use a different email address or sign in"
+        );
+        return;
+        // console.log("Response data:", response.data);
+      } else {
+        const { token } = response.data;
+        setToken(token);
+        navigate("/userInfo");
+      }
     } catch (error) {
       if (error.response && error.response.data) {
         setErrorMessage(error.response.data.message);
