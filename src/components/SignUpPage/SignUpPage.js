@@ -14,9 +14,17 @@ export const SignUpPage = () => {
   const [userLastName, setUserLastName] = useState("");
   const navigate = useNavigate();
 
-  // axios.defaults.basseURL = "http://localhost:3001/";
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
 
   const onSignUpClicked = async () => {
+    if (!validateEmail(emailValue)) {
+      setErrorMessage("Invalid email address.");
+      return;
+    }
+
     if (passwordValue !== confirmPasswordValue) {
       setErrorMessage("Passwords do not match.");
       return;
