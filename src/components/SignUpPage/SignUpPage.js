@@ -39,8 +39,8 @@ export const SignUpPage = () => {
         setErrorMessage(
           "Email already exists. Please use a different email address or sign in"
         );
-        return;
-        // console.log("Response data:", response.data);
+        // return;
+        console.log("Response data:", response.data);
       } else {
         const { token } = response.data;
         setToken(token);
