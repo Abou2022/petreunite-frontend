@@ -39,8 +39,6 @@ export const SignUpPage = () => {
         setErrorMessage(
           "Email already exists. Please use a different email address or sign in"
         );
-        // return;
-        console.log("Response data:", response.data);
       } else {
         const { token } = response.data;
         setToken(token);
@@ -58,7 +56,6 @@ export const SignUpPage = () => {
     <div className="login-container">
       <div className="login-box">
         <h1>Sign Up</h1>
-        {errorMessage && <div className="fail">{errorMessage}</div>}
 
         <input
           className="login-input"
@@ -72,7 +69,7 @@ export const SignUpPage = () => {
           onChange={(e) => setUserLastName(e.target.value)}
           placeholder="Last Name"
         />
-
+        {errorMessage && <div className="fail">{errorMessage}</div>}
         <input
           className="login-input"
           value={emailValue}
@@ -80,6 +77,7 @@ export const SignUpPage = () => {
           type="email"
           placeholder="someone@gmail.com"
         />
+
         <input
           className="login-input"
           value={passwordValue}
