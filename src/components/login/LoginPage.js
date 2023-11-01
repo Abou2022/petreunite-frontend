@@ -2,8 +2,11 @@ import "../login/LoginPage.css";
 import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { useToken } from "../auth/useToken";
 
 export const LoginPage = () => {
+  const [token, setToken] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [emailValue, setEmailValue] = useState("");
   const [passwordValue, setPasswordValue] = useState("");
@@ -11,7 +14,13 @@ export const LoginPage = () => {
   const navigate = useNavigate();
 
   const onLogInClicked = async () => {
-    // alter("login is not implemented");
+    const response = await axios.post("http://localhost:3001/api/login", {
+      email: emailValue,
+      password: passwordValue,
+    });
+    const { token } = response.data;
+    setToken(token);
+    navigate("/userInfo");
   };
   return (
     <div className="login-container">
