@@ -1,12 +1,11 @@
 import "../login/LoginPage.css";
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useToken } from "../auth/useToken";
 
 export const LoginPage = () => {
-  const [token, setToken] = useState("");
+  const [token, setToken] = useToken();
   const [errorMessage, setErrorMessage] = useState("");
   const [emailValue, setEmailValue] = useState("");
   const [passwordValue, setPasswordValue] = useState("");
@@ -14,13 +13,23 @@ export const LoginPage = () => {
   const navigate = useNavigate();
 
   const onLogInClicked = async () => {
-    const response = await axios.post("http://localhost:3001/api/login", {
-      email: emailValue,
-      password: passwordValue,
-    });
-    const { token } = response.data;
-    setToken(token);
-    navigate("/userInfo");
+    try {
+      const response = await axios.post("http://localhost:3001/api/login", {
+        email: emailValue,
+        password: passwordValue,
+      });
+      const { token } = response.data;
+      setToken(token);
+      navigate("/userInfo");
+    } catch (error) {
+      if (error.response && error.response.status === 401) {
+        // Unauthorized (401) indicates wrong email or password
+        setErrorMessage("Wrong email or password. Please try again.");
+      } else {
+        // Handle other errors (e.g., server issues)
+        setErrorMessage("An error occurred. Please try again later.");
+      }
+    }
   };
   return (
     <div className="login-container">
@@ -50,9 +59,9 @@ export const LoginPage = () => {
           Log In
         </button>
         <div className="login-links">
-          <button onClick={navigate("/forgot-password")}>
+          {/* <button onClick={navigate("/forgot-password")}>
             Forgot your password?
-          </button>
+          </button> */}
           <button onClick={() => navigate("/signup")}>
             Don't have an account? Sign Up
           </button>
