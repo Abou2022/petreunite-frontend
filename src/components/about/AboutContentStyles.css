@@ -1,4 +1,5 @@
-.about {
+/* CSS for the About Me section */
+.about-content-container {
   width: 100%;
   margin: 3rem 0;
   display: flex;
@@ -8,22 +9,22 @@
   height: 100%;
 }
 
-.about .left {
+.about-content-container .about-left {
   text-align: center;
   margin: auto;
   padding: 1rem;
   max-width: 350px;
 }
 
-.about .left p {
+.about-content-container .about-left p {
   margin: 1.2rem 0;
 }
 
-.about .right {
+.about-content-container .about-right {
   max-width: 700px;
 }
 
-.right .img-container {
+.about-content-container .img-container {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   position: relative;
@@ -31,19 +32,19 @@
   text-align: center;
 }
 
-.right .img {
+.about-content-container .img {
   max-width: 90%;
   border: 1px solid #333;
 }
 
-.right .top {
+.about-content-container .top {
   grid-column: 1 / span 8;
   grid-row: 1;
   padding-top: 20%;
   z-index: 6;
 }
 
-.right .bottom {
+.about-content-container .bottom {
   grid-column: 4 / -1;
   grid-row: 1;
   z-index: 5;
