@@ -2,9 +2,6 @@ import "../about/AboutContentStyles.css";
 import React from "react";
 import { Link } from "react-router-dom";
 
-import FullStack from "../../assets/FullStack.jpg";
-import Desktop from "../../assets/Desktop.jpg";
-
 const AboutContent = () => {
   return (
     <div className="about-content-container">
@@ -29,10 +26,10 @@ const AboutContent = () => {
         <div className="about-right">
           <div className="img-container">
             <div className="img-stack top">
-              <img src={FullStack} className="img" alt="Full stack" />
+              {/* <img src={FullStack} className="img" alt="Full stack" /> */}
             </div>
             <div className="img-stack bottom">
-              <img src={Desktop} className="img" alt="Full stack" />
+              {/* <img src={Desktop} className="img" alt="Full stack" /> */}
             </div>
           </div>
         </div>

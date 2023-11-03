@@ -40,6 +40,7 @@ import AddPets from "./routes/AddPets";
 import SignUp from "./routes/SignUp";
 // import PrivateRoute from "./components/auth/PrivateRoute";
 import UserInfo from "./routes/UserInfo";
+import AboutMe from "./routes/AboutMe";
 
 function App() {
   return (
@@ -52,6 +53,7 @@ function App() {
       {/* Use the PrivateRoute to protect the /userInfo route */}
       {/* <PrivateRoute path="/userInfo" element={<UserInfo />} /> */}
       <Route path="/userInfo" element={<UserInfo />} />
+      <Route path="/about" element={<AboutMe />} />
     </Routes>
   );
 }
