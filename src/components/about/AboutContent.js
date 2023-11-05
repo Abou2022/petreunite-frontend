@@ -25,12 +25,12 @@ const AboutContent = () => {
         </div>
         <div className="about-right">
           <div className="img-container">
-            <div className="img-stack top">
-              {/* <img src={FullStack} className="img" alt="Full stack" /> */}
-            </div>
-            <div className="img-stack bottom">
-              {/* <img src={Desktop} className="img" alt="Full stack" /> */}
-            </div>
+            {/* <div className="img-stack top">
+              <img src={FullStack} className="img" alt="Full stack" />
+            </div> */}
+            {/* <div className="img-stack bottom">
+              <img src={Desktop} className="img" alt="Full stack" />
+            </div> */}
           </div>
         </div>
       </div>
