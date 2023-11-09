@@ -1,5 +1,6 @@
 /* CSS for the About Me section */
 .about-content-container {
+  background-image: url();
   width: 100%;
   margin: 3rem 0;
   display: flex;
