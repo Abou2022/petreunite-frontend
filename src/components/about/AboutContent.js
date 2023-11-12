@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 import FullStack from "../../assets/FullStack.jpg";
 import Desktop from "../../assets/Desktop.jpg";
+import Bak1 from "../../assets/Bak1.jpg";
 
 const AboutContent = () => {
   return (
@@ -28,8 +29,11 @@ const AboutContent = () => {
       <div className="right">
         <div className="img-container">
           <div className="img-stack top">
-            <img src={FullStack} className="img" alt="Full stack" />
+            <img src={Bak1} className="img" alt="Full stack" />
           </div>
+          {/* <div className="img-stack top">
+            <img src={FullStack} className="img" alt="Full stack" />
+          </div> */}
           <div className="img-stack bottom">
             <img src={Desktop} className="img" alt="Full stack" />
           </div>
