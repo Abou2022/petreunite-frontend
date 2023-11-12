@@ -12,15 +12,20 @@ const AboutContent = () => {
       <div className="left">
         <h1>Let me share more about me.</h1>
         <p>
-          Possessing a Computer Science background, I am a proficient Full-stack
-          Software Developer skilled in the MERN stack, adept at creating robust
-          web applications. My expertise encompasses both front-end and back-end
-          development, allowing me to craft comprehensive solutions. With a
-          strong desire to make meaningful contributions, I am enthusiastic
-          about lending my technical prowess to impactful projects that drive
-          innovation and excellence. My holistic skill set and commitment to
-          delivering high-quality results position me to thrive in dynamic and
-          challenging environments.
+          I am Bakary Sylla, a seasoned software professional residing in
+          Washington State. I honed my skills at the University of Washington,
+          where I successfully completed a bootcamp in Full Stack Web
+          Development.
+          <br /> With a foundation in Computer Science, I bring a wealth of
+          experience as a proficient Full-stack Software Developer, specializing
+          in the MERN stack. My proficiency extends across both front-end and
+          back-end development, enabling me to create robust web applications
+          and devise comprehensive solutions. <br /> Driven by a passion for
+          impactful contributions, I am eager to leverage my technical prowess
+          on projects that push the boundaries of innovation and excellence. My
+          holistic skill set, coupled with a steadfast commitment to delivering
+          high-quality results, positions me to thrive in dynamic and
+          challenging professional environments.
         </p>
         <Link to="/contact">
           <button className="btn">CONTACT</button>
