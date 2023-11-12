@@ -10,13 +10,18 @@
   height: 100%;
   background-color: black;
   color: white;
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  column-gap: 2rem; /* Adjust the gap between columns */
 }
 
 .about-content-container .about-left {
   text-align: center;
   margin: auto;
   padding: 1rem;
+
   max-width: 350px;
+  position: relative;
+  float: left;
 }
 
 .about-content-container .about-left p {
@@ -25,6 +30,7 @@
 
 .about-content-container .about-right {
   max-width: 700px;
+  padding-left: 5rem;
 }
 
 .about-right .img-container {
