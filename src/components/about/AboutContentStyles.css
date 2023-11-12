@@ -1,6 +1,4 @@
-/* CSS for the About Me section */
-.about-content-container {
-  background-image: url();
+.about {
   width: 100%;
   margin: 3rem 0;
   display: flex;
@@ -8,32 +6,24 @@
   justify-content: center;
   flex-wrap: wrap;
   height: 100%;
-  background-color: black;
-  color: white;
-  grid-template-columns: 1fr 1fr; /* Two equal columns */
-  column-gap: 2rem; /* Adjust the gap between columns */
 }
 
-.about-content-container .about-left {
+.about .left {
   text-align: center;
   margin: auto;
   padding: 1rem;
-
   max-width: 350px;
-  position: relative;
-  float: left;
 }
 
-.about-content-container .about-left p {
+.about .left p {
   margin: 1.2rem 0;
 }
 
-.about-content-container .about-right {
+.about .right {
   max-width: 700px;
-  padding-left: 5rem;
 }
 
-.about-right .img-container {
+.right .img-container {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   position: relative;
@@ -41,24 +31,24 @@
   text-align: center;
 }
 
-.about-right .img {
+.right .img {
   max-width: 90%;
   border: 1px solid #333;
 }
 
-.about-right .top {
+.right .top {
   grid-column: 1 / span 8;
   grid-row: 1;
   padding-top: 20%;
   z-index: 6;
 }
 
-.about-right .bottom {
+.right .bottom {
   grid-column: 4 / -1;
   grid-row: 1;
   z-index: 5;
 }
-button {
+.btn {
   padding: 12px 32px;
   font-size: 1rem;
   text-transform: uppercase;
@@ -67,15 +57,4 @@ button {
   border: 1px solid #fff;
   font-weight: 600;
   cursor: pointer;
-}
-
-.btn-light {
-  background: transparent;
-  color: #fff;
-}
-
-.btn:hover {
-  background: rgba(255, 255, 225, 0.2);
-  color: #fff;
-  transition: 0.3s;
 }
