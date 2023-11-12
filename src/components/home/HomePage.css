@@ -7,15 +7,13 @@
 .home-page {
   font-family: Arial, sans-serif;
   background-image: url(../../assets/GermanDog.webp);
-  background-size: cover; /* Adjust to your needs */
+  background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   color: #333;
   height: 100vh;
-  /* width: 100vh; */
 }
 
-/* Header styles */
 header {
   background-color: #0078d4;
   color: #fff;
@@ -32,10 +30,9 @@ header p {
   font-size: 1.2rem;
 }
 
-/* Main content styles */
 .home-page main {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column; /* Updated to column layout */
   align-items: center;
   padding: 2rem;
 }
@@ -45,19 +42,15 @@ header p {
 .browse-section {
   text-align: center;
   padding: 1rem;
-  /* background-color: #fff; */
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   color: white;
+  width: 100%; /* Set width to 100% */
+  margin-bottom: 1rem;
 }
-.signup-section:hover {
-  background-color: #fff;
-  color: #333;
-}
-.login-section:hover {
-  background-color: #fff;
-  color: #333;
-}
+
+.signup-section:hover,
+.login-section:hover,
 .browse-section:hover {
   background-color: #fff;
   color: #333;
@@ -101,17 +94,16 @@ header p {
   background-color: #005ea2;
 }
 
-/* Responsive styles for smaller screens */
-@media (max-width: 768px) {
+@media (min-width: 769px) {
   .home-page main {
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row; /* For larger screens, switch back to row layout */
+    justify-content: space-around;
   }
 
   .signup-section,
   .login-section,
   .browse-section {
-    width: 90%;
-    margin-bottom: 1rem;
+    width: 30%; /* Adjust width for larger screens */
+    margin-bottom: 0; /* Remove margin-bottom for larger screens */
   }
 }
