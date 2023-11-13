@@ -1,3 +1,8 @@
+.contact-container {
+  background: black;
+  padding: 2rem;
+}
+
 label {
   color: #fff;
   margin-bottom: 0.5rem;
@@ -6,10 +11,9 @@ label {
 form {
   display: flex;
   flex-direction: column;
-  padding: 4rem 1rem;
+  padding: 2rem;
   margin: auto;
   max-width: 600px;
-  background: black;
 }
 
 form input,
