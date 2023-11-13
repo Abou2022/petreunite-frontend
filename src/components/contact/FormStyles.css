@@ -9,6 +9,7 @@ form {
   padding: 4rem 1rem;
   margin: auto;
   max-width: 600px;
+  background: black;
 }
 
 form input,

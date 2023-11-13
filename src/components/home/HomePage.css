@@ -52,7 +52,7 @@ header p {
 .signup-section:hover,
 .login-section:hover,
 .browse-section:hover {
-  background-color: #fff;
+  /* background-color: #fff; */
   color: #333;
 }
 
