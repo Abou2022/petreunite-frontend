@@ -32,7 +32,7 @@ const AboutContent = () => {
           <button className="btn">CONTACT</button>
         </Link>
         <a href={MyResume} download="Bakary_Sylla_Resume">
-          <button className="bt">Download My Resume</button>
+          <button className="btn1">Download My Resume</button>
         </a>
       </div>
       <div className="right">
