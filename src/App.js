@@ -41,6 +41,7 @@ import SignUp from "./routes/SignUp";
 // import PrivateRoute from "./components/auth/PrivateRoute";
 import UserInfo from "./routes/UserInfo";
 import AboutMe from "./routes/AboutMe";
+import Contact from "./routes/Contact";
 
 function App() {
   return (
@@ -54,6 +55,7 @@ function App() {
       {/* <PrivateRoute path="/userInfo" element={<UserInfo />} /> */}
       <Route path="/userInfo" element={<UserInfo />} />
       <Route path="/about" element={<AboutMe />} />
+      <Route path="/contact" element={<Contact />} />
     </Routes>
   );
 }
