@@ -9,6 +9,7 @@ export const LoginPage = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const [emailValue, setEmailValue] = useState("");
   const [passwordValue, setPasswordValue] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   const navigate = useNavigate();
 
@@ -43,13 +44,21 @@ export const LoginPage = () => {
           type="email"
           placeholder="someone@gmail.com"
         />
-        <input
-          className="login-input"
-          value={passwordValue}
-          onChange={(e) => setPasswordValue(e.target.value)}
-          type="password"
-          placeholder="password"
-        />
+        <div className="password-input-container">
+          <input
+            className="login-input"
+            value={passwordValue}
+            onChange={(e) => setPasswordValue(e.target.value)}
+            type={showPassword ? "text" : "password"}
+            placeholder="password"
+          />
+          <button
+            className="password-toggle"
+            onClick={() => setShowPassword(!showPassword)}
+          >
+            {showPassword ? "Hide" : "Show"}
+          </button>
+        </div>
         <hr />
         <button
           className="login-button"
