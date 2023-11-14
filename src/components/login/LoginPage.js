@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useToken } from "../auth/useToken";
+// ... (your imports)
 
 export const LoginPage = () => {
   const [token, setToken] = useToken();
@@ -24,14 +25,13 @@ export const LoginPage = () => {
       navigate("/userInfo");
     } catch (error) {
       if (error.response && error.response.status === 401) {
-        // Unauthorized (401) indicates wrong email or password
         setErrorMessage("Wrong email or password. Please try again.");
       } else {
-        // Handle other errors (e.g., server issues)
         setErrorMessage("An error occurred. Please try again later.");
       }
     }
   };
+
   return (
     <div className="login-container">
       <div className="login-box">
@@ -56,7 +56,7 @@ export const LoginPage = () => {
             className="password-toggle"
             onClick={() => setShowPassword(!showPassword)}
           >
-            {showPassword ? "Hide" : "Show"}
+            {showPassword ? "✔" : "◻"}
           </button>
         </div>
         <hr />
