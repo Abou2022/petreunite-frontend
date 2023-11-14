@@ -3,7 +3,7 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-image: url("../../assets/CatReunite.jpg"); /* Your background image path */
+  background-image: url("../../assets/CatReunite.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -15,6 +15,7 @@
   width: 350px;
   text-align: center;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 
 .login-box h1 {
@@ -22,11 +23,25 @@
 }
 
 .login-input {
-  width: 100%;
+  width: calc(100% - 20px); /* Adjusted width to account for padding */
   padding: 10px;
   margin-bottom: 15px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  display: inline-block; /* Ensure inline-block display */
+  box-sizing: border-box; /* Include padding and border in the width */
+}
+
+.password-toggle {
+  position: absolute;
+  top: 50%;
+  right: 10px; /* Adjusted right property */
+  transform: translateY(-50%);
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #333;
 }
 
 .login-button {

@@ -42,6 +42,16 @@ export const SignUpPage = () => {
       } else {
         const { token } = response.data;
         setToken(token);
+
+        localStorage.setItem(
+          "user",
+          JSON.stringify({
+            email: emailValue,
+            firstName: userFirstName,
+            lastName: userLastName,
+          })
+        );
+
         navigate("/userInfo");
       }
     } catch (error) {
