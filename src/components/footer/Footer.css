@@ -3,7 +3,6 @@
   padding: 1rem 0;
   background: rgba(26, 25, 25, 0.8); /* Use rgba for transparent background */
   color: white;
-  /* To avoid overflow */
   flex-shrink: 0;
 }
 

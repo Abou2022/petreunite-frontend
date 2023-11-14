@@ -27,7 +27,6 @@
   font-size: 1.2rem;
 }
 
-/* Main content styles for BrowsePage */
 .browse-page-container main {
   display: flex;
   flex-direction: column;
@@ -35,14 +34,13 @@
   padding: 2rem;
 }
 
-/* New card styles */
 .project-container {
   max-width: 1140px;
   margin: auto;
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Adjust the number of columns */
-  grid-gap: 20px; /* Adjust the gap between cards */
-  padding-bottom: 2rem; /* Add spacing at the bottom */
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  padding-bottom: 2rem;
 }
 
 .project-card {
@@ -58,7 +56,7 @@
 .project-title {
   color: #e941ff;
   padding: 1rem 0;
-  font-size: 1.5rem; /* Adjust the title font size */
+  font-size: 1.5rem;
 }
 
 .pro-details {

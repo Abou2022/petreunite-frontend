@@ -1,5 +1,4 @@
 .contact-container {
-  /* background: black; */
   background-image: url(../../assets/CatReunite.jpg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -9,16 +8,12 @@
 }
 
 label {
-  /* color: #fff; */
-  /* background: black; */
   margin-bottom: 0.5rem;
   color: black;
   font-weight: 3rem;
-  /* font-family: 25px; */
 }
 
 form {
-  /* background: black; */
   display: flex;
   flex-direction: column;
   padding: 2rem;
@@ -36,5 +31,9 @@ form textarea {
   font-size: 1.2rem;
   background-color: rgba(255, 255, 255, 0.1);
   border-color: rgba(255, 255, 255, 0.1);
+  color: black;
+}
+
+::placeholder {
   color: black;
 }

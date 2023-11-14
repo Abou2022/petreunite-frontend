@@ -1,25 +1,18 @@
-/* Container for the login page */
 .login-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh; /* Ensures the container takes the full viewport height */
+  min-height: 100vh;
   background-image: url("../../assets/CatReunite.jpg"); /* Your background image path */
   background-size: cover;
   background-repeat: no-repeat;
 }
 
-/* Styling for the login box */
 .login-box {
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.9
-  ); /* Semi-transparent white background */
+  background-color: rgba(255, 255, 255, 0.9);
   border-radius: 8px;
   padding: 20px;
-  width: 350px; /* Adjust this as needed */
+  width: 350px;
   text-align: center;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -28,7 +21,6 @@
   margin-bottom: 20px;
 }
 
-/* Styling for the form elements */
 .login-input {
   width: 100%;
   padding: 10px;
@@ -40,7 +32,7 @@
 .login-button {
   width: 100%;
   padding: 10px;
-  background-color: #1877f2; /* Facebook blue */
+  background-color: #1877f2;
   color: white;
   border: none;
   border-radius: 4px;
@@ -48,27 +40,23 @@
 }
 
 .login-button:hover {
-  background-color: #166fe5; /* Darker shade of blue on hover */
+  background-color: #166fe5;
 }
 
-/* Styling for the forgot password and sign-up links */
 .login-links {
   display: flex;
   justify-content: space-between;
   margin-top: 10px;
 }
 
-/* Style for the failure message */
 .fail {
-  color: #ff0000; /* Red color for error messages */
+  color: #ff0000;
 }
 
-/* Center align text in the buttons */
 button {
   text-align: center;
 }
 
-/* Remove default button styles */
 button:focus {
   outline: none;
 }
