@@ -1,9 +1,7 @@
-import "../login/LoginPage.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useToken } from "../auth/useToken";
-// ... (your imports)
 
 export const LoginPage = () => {
   const [token, setToken] = useToken();
@@ -11,8 +9,16 @@ export const LoginPage = () => {
   const [emailValue, setEmailValue] = useState("");
   const [passwordValue, setPasswordValue] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-
   const navigate = useNavigate();
+
+  useEffect(() => {
+    // Retrieve user information from localStorage on component mount
+    const storedUser = localStorage.getItem("user");
+    if (storedUser) {
+      const user = JSON.parse(storedUser);
+      setEmailValue(user.email);
+    }
+  }, []);
 
   const onLogInClicked = async () => {
     try {
@@ -68,9 +74,6 @@ export const LoginPage = () => {
           Log In
         </button>
         <div className="login-links">
-          {/* <button onClick={navigate("/forgot-password")}>
-            Forgot your password?
-          </button> */}
           <button onClick={() => navigate("/signup")}>
             Don't have an account? Sign Up
           </button>

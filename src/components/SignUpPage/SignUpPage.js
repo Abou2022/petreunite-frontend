@@ -1,8 +1,7 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useToken } from "../auth/useToken";
 import axios from "axios";
+import { useToken } from "../auth/useToken";
 
 export const SignUpPage = () => {
   const [token, setToken] = useToken();
@@ -43,6 +42,7 @@ export const SignUpPage = () => {
         const { token } = response.data;
         setToken(token);
 
+        // Store user information in localStorage
         localStorage.setItem(
           "user",
           JSON.stringify({
@@ -62,6 +62,7 @@ export const SignUpPage = () => {
       }
     }
   };
+
   return (
     <div className="login-container">
       <div className="login-box">
