@@ -26,9 +26,7 @@ const Form = () => {
 
     e.target.reset();
   };
-  if (sendEmail) {
-    alert("Thank you");
-  }
+
   return (
     <div className="contact-container">
       <div className="form">
