@@ -64,9 +64,10 @@ export const LoginPage = () => {
             className="password-toggle"
             onClick={() => setShowPassword(!showPassword)}
           >
-            {showPassword ? "✔" : "◻"}
+            {showPassword ? "👁️" : "👁️‍🗨️"}
           </button>
         </div>
+
         <hr />
         <button
           className="login-button"
