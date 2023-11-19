@@ -16,26 +16,31 @@
   text-align: center;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   position: relative;
+  margin: 20px; /* Added margin for better spacing */
 }
 
 .login-box h1 {
   margin-bottom: 20px;
+  color: #333; /* Changed text color */
 }
 
 .login-input {
-  width: calc(100% - 20px); /* Adjusted width to account for padding */
-  padding: 10px;
-  margin-bottom: 15px;
+  width: 100%;
+  padding: 12px; /* Increased padding for better input appearance */
+  margin-bottom: 20px; /* Adjusted margin for better spacing */
   border: 1px solid #ccc;
   border-radius: 4px;
-  display: inline-block; /* Ensure inline-block display */
-  box-sizing: border-box; /* Include padding and border in the width */
+  box-sizing: border-box;
+}
+
+.password-input-container {
+  position: relative;
 }
 
 .password-toggle {
   position: absolute;
   top: 50%;
-  right: 10px; /* Adjusted right property */
+  right: 10px;
   transform: translateY(-50%);
   border: none;
   background: none;
@@ -46,7 +51,7 @@
 
 .login-button {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   background-color: #1877f2;
   color: white;
   border: none;
@@ -60,8 +65,12 @@
 
 .login-links {
   display: flex;
-  justify-content: space-between;
-  margin-top: 10px;
+  flex-direction: column; /* Changed to column layout for better alignment */
+  margin-top: 20px; /* Adjusted margin for better spacing */
+}
+
+.login-links button {
+  margin-bottom: 10px; /* Added margin between buttons */
 }
 
 .fail {
@@ -70,8 +79,5 @@
 
 button {
   text-align: center;
-}
-
-button:focus {
-  outline: none;
+  outline: none; /* Removed outline for better appearance */
 }
