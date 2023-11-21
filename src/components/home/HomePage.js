@@ -1,8 +1,13 @@
 import "../home/HomePage.css";
+// Import other dependencies as needed
+
 import React from "react";
 import { Link } from "react-router-dom";
+import { useToken } from "../auth/useToken";
 
 const HomePage = () => {
+  const [token] = useToken();
+
   return (
     <div className="home-page">
       <header>
@@ -29,6 +34,12 @@ const HomePage = () => {
           <Link to="/login" className="btn-secondary">
             Log In
           </Link>
+          {/* Additional button for users who are already logged in */}
+          {token && (
+            <Link to="/userInfo" className="btn-primary">
+              Go to UserInfo
+            </Link>
+          )}
         </section>
 
         <section className="browse-section">
