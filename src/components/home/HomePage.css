@@ -12,6 +12,7 @@
   background-attachment: fixed;
   color: #333;
   height: 100vh;
+  overflow: hidden; /* Add overflow: hidden to prevent background image overflow */
 }
 
 header {
@@ -41,42 +42,48 @@ header p {
 .login-section,
 .browse-section {
   text-align: center;
-  padding: 1rem;
+  padding: 1.5rem; /* Increase padding for better spacing */
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  color: white;
+  color: #fff;
   width: 100%; /* Set width to 100% */
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem; /* Increase margin-bottom for better spacing */
 }
 
 .signup-section:hover,
 .login-section:hover,
 .browse-section:hover {
-  /* background-color: #fff; */
-  color: #000000;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.1
+  ); /* Add a subtle background color on hover */
+  color: #fff;
 }
 
 .signup-section h2,
 .login-section h2,
 .browse-section h2 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
+  font-size: 2.5rem; /* Increase font size for headings */
+  margin-bottom: 1rem; /* Increase margin-bottom for better spacing */
 }
 
 .signup-section p,
 .login-section p,
 .browse-section p {
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
+  font-size: 1.2rem; /* Increase font size for paragraphs */
+  margin-bottom: 1.5rem; /* Increase margin-bottom for better spacing */
 }
 
 .btn-primary,
 .btn-secondary {
   display: inline-block;
-  padding: 0.5rem 1rem;
+  padding: 1rem 2rem; /* Increase padding for better button size */
   border-radius: 4px;
   text-decoration: none;
   transition: background-color 0.2s;
+  cursor: pointer; /* Add cursor: pointer for better indication */
 }
 
 .btn-primary {
