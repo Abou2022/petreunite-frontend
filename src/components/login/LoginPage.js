@@ -1,5 +1,4 @@
 import "../login/LoginPage.css";
-
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -13,14 +12,40 @@ export const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
+  // Use state to keep track of the session timeout timer
+  const [sessionTimeout, setSessionTimeout] = useState(null);
+
   useEffect(() => {
-    // Retrieve user information from localStorage on component mount
+    // Retrieve user information and session expiration time from localStorage on component mount
     const storedUser = localStorage.getItem("user");
-    if (storedUser) {
+    const storedToken = localStorage.getItem("token");
+    const storedExpiration = localStorage.getItem("expiration");
+
+    if (storedUser && storedToken && storedExpiration) {
       const user = JSON.parse(storedUser);
-      setEmailValue(user.email);
+
+      // Check if the session has not expired
+      if (new Date(storedExpiration) > new Date()) {
+        setEmailValue(user.email);
+        setToken(storedToken);
+
+        // Set a new session timeout based on the remaining time
+        const remainingTime = new Date(storedExpiration) - new Date();
+        setSessionTimeout(setTimeout(handleSessionTimeout, remainingTime));
+      }
     }
-  }, []);
+  }, [setToken]);
+
+  const handleSessionTimeout = () => {
+    // Clear the session timeout and log the user out
+    clearTimeout(sessionTimeout);
+    setSessionTimeout(null);
+    setToken(null);
+    localStorage.removeItem("user");
+    localStorage.removeItem("token");
+    localStorage.removeItem("expiration");
+    setErrorMessage("Session has expired. Please log in again.");
+  };
 
   const onLogInClicked = async () => {
     try {
@@ -28,8 +53,22 @@ export const LoginPage = () => {
         email: emailValue,
         password: passwordValue,
       });
-      const { token } = response.data;
+      const { token, expiration } = response.data;
+
+      // Set the user information, token, and session expiration in localStorage
+      localStorage.setItem("user", JSON.stringify({ email: emailValue }));
+      localStorage.setItem("token", token);
+      localStorage.setItem("expiration", expiration);
+
       setToken(token);
+      setErrorMessage("");
+
+      // Clear any existing session timeout and set a new one
+      if (sessionTimeout) {
+        clearTimeout(sessionTimeout);
+      }
+      setSessionTimeout(setTimeout(handleSessionTimeout, 15 * 60 * 1000)); // 15 minutes
+
       navigate("/userInfo");
     } catch (error) {
       if (error.response && error.response.status === 401) {
