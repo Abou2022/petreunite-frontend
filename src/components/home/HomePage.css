@@ -12,7 +12,7 @@
   background-attachment: fixed;
   color: #333;
   height: 100vh;
-  overflow: hidden; /* Add overflow: hidden to prevent background image overflow */
+  overflow: hidden;
 }
 
 header {
@@ -33,7 +33,7 @@ header p {
 
 .home-page main {
   display: flex;
-  flex-direction: column; /* Updated to column layout */
+  flex-direction: column;
   align-items: center;
   padding: 2rem;
 }
@@ -42,48 +42,44 @@ header p {
 .login-section,
 .browse-section {
   text-align: center;
-  padding: 1.5rem; /* Increase padding for better spacing */
+  padding: 1.5rem;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   color: #fff;
-  width: 100%; /* Set width to 100% */
-  margin-bottom: 1.5rem; /* Increase margin-bottom for better spacing */
+  width: 100%;
+  margin-bottom: 1.5rem;
 }
 
 .signup-section:hover,
 .login-section:hover,
 .browse-section:hover {
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.1
-  ); /* Add a subtle background color on hover */
+  background-color: rgba(255, 255, 255, 0.1);
   color: #fff;
 }
 
 .signup-section h2,
 .login-section h2,
 .browse-section h2 {
-  font-size: 2.5rem; /* Increase font size for headings */
-  margin-bottom: 1rem; /* Increase margin-bottom for better spacing */
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
 
 .signup-section p,
 .login-section p,
 .browse-section p {
-  font-size: 1.2rem; /* Increase font size for paragraphs */
-  margin-bottom: 1.5rem; /* Increase margin-bottom for better spacing */
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
 }
 
 .btn-primary,
 .btn-secondary {
   display: inline-block;
-  padding: 1rem 2rem; /* Increase padding for better button size */
+  padding: 1rem 2rem;
   border-radius: 4px;
   text-decoration: none;
   transition: background-color 0.2s;
-  cursor: pointer; /* Add cursor: pointer for better indication */
+  cursor: pointer;
+  margin-right: 1rem;
 }
 
 .btn-primary {
@@ -103,14 +99,14 @@ header p {
 
 @media (min-width: 769px) {
   .home-page main {
-    flex-direction: row; /* For larger screens, switch back to row layout */
+    flex-direction: row;
     justify-content: space-around;
   }
 
   .signup-section,
   .login-section,
   .browse-section {
-    width: 30%; /* Adjust width for larger screens */
-    margin-bottom: 0; /* Remove margin-bottom for larger screens */
+    width: 30%;
+    margin-bottom: 0;
   }
 }
