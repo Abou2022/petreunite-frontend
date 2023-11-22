@@ -40,9 +40,7 @@ const AboutContent = () => {
           <div className="img-stack top">
             <img src={Bak1} className="img" alt="Full stack" />
           </div>
-          {/* <div className="img-stack top">
-            <img src={FullStack} className="img" alt="Full stack" />
-          </div> */}
+
           <div className="img-stack bottom">
             <img src={Desktop} className="img" alt="Full stack" />
           </div>

@@ -1,5 +1,4 @@
 import "../home/HomePage.css";
-// Import other dependencies as needed
 
 import React from "react";
 import { Link } from "react-router-dom";
