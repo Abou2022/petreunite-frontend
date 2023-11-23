@@ -13,20 +13,13 @@
   padding: 20px; /* Add some padding for content */
 }
 
-.user-info-container h1 {
-  font-size: 36px;
-  margin-bottom: 20px;
+.user-info-content {
+  flex: 1; /* Grow and take remaining vertical space */
 }
 
-/* Add additional styles for user information rendering */
-
-/* Footer styles */
-/* .footer {
-  background-color: #333; 
-  color: #fff;
+.user-info-footer {
   text-align: center;
   padding: 10px;
   width: 100%;
-  position: absolute;
-  bottom: 0; 
-} */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+}

@@ -36,22 +36,28 @@ export const UserInfoPage = () => {
   }, [token]);
 
   return (
-    <div>
-      <h1>User Info</h1>
-      {errorMessage && <div className="fail">{errorMessage}</div>}
-      {user && (
-        <div>
-          <h2>
-            Welcome, {user.firstName} {user.lastName}!
-          </h2>
-          <h3>Your Registered Pets:</h3>
-          <ul>
-            {user.pets.map((pet) => (
-              <li key={pet.id}>{pet.name}</li>
-            ))}
-          </ul>
-        </div>
-      )}
+    <div className="user-info-container">
+      <div className="user-info-content">
+        <h1>User Info</h1>
+        {errorMessage && <div className="fail">{errorMessage}</div>}
+        {user && (
+          <div>
+            <h2>
+              Welcome, {user.firstName} {user.lastName}!
+            </h2>
+            <h3>Your Registered Pets:</h3>
+            <ul>
+              {user.pets.map((pet) => (
+                <li key={pet.id}>{pet.name}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
+      {/* <div className="user-info-footer">
+        <!-- Your footer content goes here -->
+        &copy; 2023 PetReunite. All rights reserved.
+      </div> */}
     </div>
   );
 };
