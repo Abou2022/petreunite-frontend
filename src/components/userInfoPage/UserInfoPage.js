@@ -54,10 +54,6 @@ export const UserInfoPage = () => {
           </div>
         )}
       </div>
-      {/* <div className="user-info-footer">
-        <!-- Your footer content goes here -->
-        &copy; 2023 PetReunite. All rights reserved.
-      </div> */}
     </div>
   );
 };

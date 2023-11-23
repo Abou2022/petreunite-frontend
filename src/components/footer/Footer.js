@@ -53,6 +53,9 @@ const Footer = () => {
             bond between humans and their furry companions.
           </p>
         </div>
+        <div className="user-info-footer">
+          &copy; 2023 Bakary Sylla. PetReunite. All rights reserved.
+        </div>
       </div>
     </div>
   );

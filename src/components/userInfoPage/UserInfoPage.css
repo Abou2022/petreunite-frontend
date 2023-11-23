@@ -17,9 +17,9 @@
   flex: 1; /* Grow and take remaining vertical space */
 }
 
-.user-info-footer {
+/* .user-info-footer {
   text-align: center;
   padding: 10px;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-}
+  background-color: rgba(0, 0, 0, 0.5);
+} */
