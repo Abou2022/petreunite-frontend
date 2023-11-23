@@ -2,7 +2,6 @@ import "../footer/Footer.css";
 
 import React from "react";
 import { FaGithub, FaHome, FaLinkedin, FaMailBulk } from "react-icons/fa";
-
 const Footer = () => {
   return (
     <div className="footer">
@@ -27,7 +26,7 @@ const Footer = () => {
             </h4>
           </div>
           <div className="social">
-            <a href="https://github.com/Abou2022" target="_blanc">
+            <a href="https://github.com/Abou2022" target="_blank">
               {" "}
               <FaGithub
                 size={40}
@@ -35,7 +34,7 @@ const Footer = () => {
               />
             </a>
 
-            <a href="http://www.linkedin.com/in/bakary-sylla" target="_blanc">
+            <a href="http://www.linkedin.com/in/bakary-sylla" target="_blank">
               <FaLinkedin
                 size={40}
                 style={{ color: "#fff", marginRight: "1rem" }}
@@ -53,9 +52,9 @@ const Footer = () => {
             bond between humans and their furry companions.
           </p>
         </div>
-        <div className="user-info-footer">
-          &copy; 2023 Bakary Sylla. PetReunite. All rights reserved.
-        </div>
+      </div>
+      <div className="user-info-footer">
+        &copy; 2023 Bakary Sylla. PetReunite. All rights reserved.
       </div>
     </div>
   );
