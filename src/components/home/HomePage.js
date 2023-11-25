@@ -1,7 +1,6 @@
 import "../home/HomePage.css";
-
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { useToken } from "../auth/useToken";
 
 const HomePage = () => {
@@ -34,10 +33,12 @@ const HomePage = () => {
             Log In
           </Link>
           {/* Additional button for users who are already logged in */}
-          {token && (
+          {token ? (
             <Link to="/userInfo" className="btn-primary">
               Go to UserInfo
             </Link>
+          ) : (
+            <Navigate to="/login" />
           )}
         </section>
 
