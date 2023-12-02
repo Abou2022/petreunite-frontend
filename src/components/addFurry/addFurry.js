@@ -15,13 +15,27 @@ function AddFurry() {
     lastTime: "",
     petLost: false,
     petFound: false,
-    picture: "",
+    picture: "null",
   });
-
+  const [imagePreview, setImagePreview] = useState(null);
   // Function to handle form input changes
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+  };
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    setFormData({ ...formData, picture: file });
+
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setImagePreview(reader.result);
+      };
+      reader.readAsDataURL(file);
+    } else {
+      setImagePreview(null);
+    }
   };
 
   // Function to handle form submission
