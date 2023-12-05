@@ -43,11 +43,21 @@ function AddFurry() {
     e.preventDefault();
 
     try {
+      const url = "https://api.cloudinary.com/v1_1/daxlpyuij/image/upload/";
+      const preset = "pyi4eiaa";
+      const formDataToSend = new FormData();
+      formDataToSend.append("file", formData.picture);
+      formDataToSend.append("upload_preset", preset);
       // Make a POST request to save the form data to the backend
+
       const response = await axios.post(
         "http://localhost:3001/api/furry",
         formData
       );
+      const data = await response.json();
+
+      // Update the state with the secure URL from Cloudinary
+      setFormData({ ...formData, picture: data.secure_url });
 
       if (response.status === 200) {
         console.log("Furry information submitted successfully!");
