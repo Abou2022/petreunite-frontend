@@ -15,7 +15,7 @@ function AddFurry() {
     lastTime: "",
     petLost: false,
     petFound: false,
-    picture: "null",
+    picture: "",
   });
   const [imagePreview, setImagePreview] = useState(null);
   // Function to handle form input changes
@@ -145,6 +145,16 @@ function AddFurry() {
             type="text"
             name="particularSign"
             value={formData.particularSign}
+            onChange={handleInputChange}
+            required
+          />
+        </div>
+        <div>
+          <label>Add picture:</label>
+          <input
+            type="picture"
+            name="AddPicture"
+            value={formData.picture}
             onChange={handleInputChange}
             required
           />
