@@ -100,6 +100,7 @@ function AddFurry() {
           <input
             type="text"
             name="name"
+            placeholder="Required"
             value={formData.name}
             onChange={handleInputChange}
             required
@@ -109,6 +110,7 @@ function AddFurry() {
           <label>Furry Description:</label>
           <textarea
             name="furryDescription"
+            placeholder="Required"
             value={formData.furryDescription}
             onChange={handleInputChange}
             required
@@ -120,6 +122,7 @@ function AddFurry() {
           <input
             type="text"
             name="animal"
+            placeholder="Required"
             value={formData.animal}
             onChange={handleInputChange}
             required
@@ -131,6 +134,7 @@ function AddFurry() {
           <input
             type="text"
             name="color"
+            placeholder="Required"
             value={formData.color}
             onChange={handleInputChange}
             required
@@ -142,6 +146,7 @@ function AddFurry() {
           <input
             type="text"
             name="breed"
+            placeholder="Required"
             value={formData.breed}
             onChange={handleInputChange}
             required
@@ -153,6 +158,7 @@ function AddFurry() {
           <input
             type="text"
             name="particularSign"
+            placeholder="Required"
             value={formData.particularSign}
             onChange={handleInputChange}
             required
@@ -184,6 +190,7 @@ function AddFurry() {
           <input
             type="text"
             name="lastLocation"
+            placeholder="Required"
             value={formData.lastLocation}
             onChange={handleInputChange}
             required
