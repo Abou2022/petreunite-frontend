@@ -15,14 +15,18 @@ function AddFurry() {
     lastTime: "",
     petLost: false,
     petFound: false,
-    picture: "",
+    picture: null,
   });
+
   const [imagePreview, setImagePreview] = useState(null);
+
   // Function to handle form input changes
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
+
+  // Function to handle image changes
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     setFormData({ ...formData, picture: file });
@@ -48,16 +52,20 @@ function AddFurry() {
       const formDataToSend = new FormData();
       formDataToSend.append("file", formData.picture);
       formDataToSend.append("upload_preset", preset);
+
+      // Make a POST request to upload the image to Cloudinary
+      const cloudinaryResponse = await fetch(url, {
+        method: "POST",
+        body: formDataToSend,
+      });
+      const cloudinaryData = await cloudinaryResponse.json();
+      const imageUrl = cloudinaryData.secure_url;
+
       // Make a POST request to save the form data to the backend
-
-      const response = await axios.post(
-        "http://localhost:3001/api/furry",
-        formData
-      );
-      const data = await response.json();
-
-      // Update the state with the secure URL from Cloudinary
-      setFormData({ ...formData, picture: data.secure_url });
+      const response = await axios.post("http://localhost:3001/api/furry", {
+        ...formData,
+        picture: imageUrl,
+      });
 
       if (response.status === 200) {
         console.log("Furry information submitted successfully!");
@@ -74,8 +82,9 @@ function AddFurry() {
           lastTime: "",
           petLost: false,
           petFound: false,
-          picture: "",
+          picture: null,
         });
+        setImagePreview(null);
       }
     } catch (error) {
       console.error("Error submitting furry information:", error);
@@ -152,13 +161,23 @@ function AddFurry() {
         <div>
           <label>Add picture:</label>
           <input
-            type="picture"
+            type="file"
+            accept="image/*"
             name="AddPicture"
-            value={formData.picture}
-            onChange={handleInputChange}
+            onChange={handleImageChange}
             required
           />
         </div>
+
+        {imagePreview && (
+          <div>
+            <img
+              src={imagePreview}
+              alt="Image Preview"
+              style={{ maxWidth: "100%" }}
+            />
+          </div>
+        )}
 
         <div>
           <label>Last Location:</label>
@@ -215,15 +234,6 @@ function AddFurry() {
           />
         </div>
 
-        {/* <div>
-          <label>Picture URL:</label>
-          <input
-            type="text"
-            name="picture"
-            value={formData.picture}
-            onChange={handleInputChange}
-          />
-        </div> */}
         <button type="submit">Submit</button>
       </form>
     </div>
