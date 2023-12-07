@@ -174,7 +174,7 @@ function AddFurry() {
             required
           />
         </div>
-
+        {/* visualize the image */}
         {imagePreview && (
           <div>
             <img
